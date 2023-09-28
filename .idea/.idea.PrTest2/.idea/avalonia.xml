@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="PrTest2/MainWindow.axaml" value="PrTest2/PrTest2.csproj" />
+        <entry key="PrTest2/NationalityWindow.axaml" value="PrTest2/PrTest2.csproj" />
+        <entry key="PrTest2/ParticipantsWindow.axaml" value="PrTest2/PrTest2.csproj" />
+        <entry key="PrTest2/SportWindow.axaml" value="PrTest2/PrTest2.csproj" />
+        <entry key="PrTest2/Sport_NationWindow.axaml" value="PrTest2/PrTest2.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
