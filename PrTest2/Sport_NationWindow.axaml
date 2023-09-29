@@ -31,7 +31,7 @@
             Margin="50">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Sport_Nation_Text}"/>
+                    <TextBlock Text="{Binding Id}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

@@ -18,7 +18,7 @@ public partial class Sport_NationWindow : Window
     {
         InitializeComponent();
         ReturnButton.Click += ReturnB;
-        Sport_Nation();
+        SportNation();
     }
     
     public Sport_NationWindow(int qwe)
@@ -26,7 +26,7 @@ public partial class Sport_NationWindow : Window
         InitializeComponent();
         ReturnButton.Click += ReturnB;
         wsx.Text = qwe.ToString();
-        Sport_Nation();
+        SportNation();
     }
 
     private void ReturnB(Object sender, EventArgs e)
@@ -48,13 +48,25 @@ public partial class Sport_NationWindow : Window
     
     
 
-    public void Sport_Nation()
+    public void SportNation()
     {
         List<Sportsman> sportsmen = Helper.Database.Sportsmans.ToList();
-        Sport_Nation_List.Items = sportsmen.Select(x => new
-        {
-            
-        });
+
+        var nan1 = sportsmen
+            .Where(s => s.Name == wsx.Name)
+            .Select(s => new
+            {
+                Id = s.Id,
+                
+                Name = s.Name,
+                Surname = s.Surname,
+                Sport = s.Sport,
+             
+                Age = s.Age
+            }).ToList();
+
+
+        Sport_Nation_List.Items = sportsmen;
 
     }
 

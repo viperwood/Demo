@@ -19,7 +19,7 @@ public partial class SportWindow : Window
         Sports();
     }
 
-    private int qwe;
+  
     
     
     
@@ -46,10 +46,12 @@ public partial class SportWindow : Window
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
       
-        qwe = (int)(sender as Button).Tag;
-        Sport_NationWindow sportNationWindow = new Sport_NationWindow(qwe);
+      
+        Sport_NationWindow sportNationWindow = new Sport_NationWindow(
+            (int)(sender as Button).Tag
+            );
         sportNationWindow.Show();
-        Close();
+        this.Close();
 
 
 
