@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Mime;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Castle.Components.DictionaryAdapter.Xml;
 using PrTest2.Models;
@@ -12,20 +13,20 @@ namespace PrTest2;
 
 public partial class Sport_NationWindow : Window
 {
-    public  Nation nation;
     
     public Sport_NationWindow()
     {
         InitializeComponent();
         ReturnButton.Click += ReturnB;
+        Sport_Nation();
     }
     
-    public Sport_NationWindow(string Id)
+    public Sport_NationWindow(int qwe)
     {
         InitializeComponent();
         ReturnButton.Click += ReturnB;
-        wsx.Text = Id;
-        
+        wsx.Text = qwe.ToString();
+        Sport_Nation();
     }
 
     private void ReturnB(Object sender, EventArgs e)
@@ -42,6 +43,10 @@ public partial class Sport_NationWindow : Window
             throw;
         }
     }
+
+
+    
+    
 
     public void Sport_Nation()
     {

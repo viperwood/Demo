@@ -17,8 +17,8 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBox
-            Name="qwe"></TextBox>
+        <!--<TextBox
+            Name="qwe"></TextBox>-->
         <StackPanel
             Grid.Column="1"
             Grid.Row="0">
