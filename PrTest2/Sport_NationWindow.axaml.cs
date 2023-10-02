@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mime;
+using System.Security.Cryptography;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -17,19 +18,10 @@ public partial class Sport_NationWindow : Window
     public Sport_NationWindow()
     {
         InitializeComponent();
-        ReturnButton.Click += ReturnB;
-        SportNation();
-    }
-    
-    public Sport_NationWindow(int qwe)
-    {
-        InitializeComponent();
-        ReturnButton.Click += ReturnB;
-        wsx.Text = qwe.ToString();
         SportNation();
     }
 
-    private void ReturnB(Object sender, EventArgs e)
+    private void ReturnButton_OnClick(object? sender, RoutedEventArgs e)
     {
         try
         {
@@ -44,30 +36,50 @@ public partial class Sport_NationWindow : Window
         }
     }
 
+    public int rer;
+    
+
+    public Sport_NationWindow(int qwe)
+    {
+        InitializeComponent();
+      
+        wsx.Text = qwe.ToString();
+
+        rer = qwe;
+        SportNation();
+    }
+
+
+
 
     
     
 
     public void SportNation()
     {
+        
         List<Sportsman> sportsmen = Helper.Database.Sportsmans.ToList();
+        List<Nation> nation = Helper.Database.Nations.ToList();
 
-        var nan1 = sportsmen
-            .Where(s => s.Name == wsx.Name)
+        var sportsmensAndNation = sportsmen
+            
+            
+            
+            // .Where(s => s.Nationality == rer)
+            
             .Select(s => new
             {
-                Id = s.Id,
-                
-                Name = s.Name,
-                Surname = s.Surname,
-                Sport = s.Sport,
-             
-                Age = s.Age
+                Nationality = s.Nationality,
+                Id = s.Id
             }).ToList();
+        
+        
+            /*from s in sportsmen
+            join n in nation on n => n.Id == s equals s => s.Nationality == rer */
 
-
-        Sport_Nation_List.Items = sportsmen;
+        SportNationList.Items = sportsmensAndNation;
 
     }
 
+    
 }

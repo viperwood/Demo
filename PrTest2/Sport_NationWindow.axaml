@@ -12,7 +12,7 @@
             Grid.Column="1" 
             Grid.Row="0"
             Margin="10"
-            Name="ReturnButton">
+            Click="ReturnButton_OnClick">
             <TextBlock
                 Text="Return"/>
         </Button>
@@ -24,14 +24,14 @@
             FontSize="20"/>
         <TextBox Name="wsx"/>
         <ListBox 
-            Name="Sport_Nation_List"
+            Name="SportNationList"
             Grid.Column="1" 
             Grid.Row="1" 
             Grid.RowSpan="2"
             Margin="50">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Id}"/>
+                    <TextBlock Text="{Binding Nationality}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
