@@ -10,4 +10,5 @@ public partial class TypesOfSport
     public string Title { get; set; } = null!;
 
     public virtual ICollection<Sportsman> Sportsmen { get; set; } = new List<Sportsman>();
+    
 }

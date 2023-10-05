@@ -4,6 +4,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="PrTest2.Sport_NationWindow"
+        MinHeight="1000"
+        MinWidth="500"
+        WindowState="Maximized"
         Title="Sport_NationWindow">
     <Grid 
         RowDefinitions="50,*,*"
@@ -20,9 +23,27 @@
             Grid.Column="1" 
             Grid.Row="0"
             Text="Sport_Nationality"
+            VerticalAlignment="Center"
             HorizontalAlignment="Center"
             FontSize="20"/>
-        <TextBox Name="wsx"/>
+        <Border 
+            Grid.Column="1" 
+            Grid.Row="1"
+            CornerRadius="10 10 0 0"
+            VerticalAlignment="Top"
+            Width="200"
+            Height="30"
+            HorizontalAlignment="Left"
+            Background="LightGray"
+            Margin="50 20 0 0">
+            <TextBlock 
+                Margin="7.5"
+                Name="wsx"
+                FontSize="15"
+                TextAlignment="Center"
+                HorizontalAlignment="Center"
+                />
+        </Border>
         <ListBox 
             Name="SportNationList"
             Grid.Column="1" 
@@ -31,7 +52,27 @@
             Margin="50">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Nationality}"/>
+                    <Border
+                        BorderBrush="Black"
+                        HorizontalAlignment="Center"
+                        CornerRadius="10"
+                        BoxShadow="5 5 10 2 Gray"
+                        BorderThickness="2">
+                        <StackPanel>
+                            <Button
+                                Height="40"
+                                Width="200"
+                                Background="Transparent"
+                                Content="{Binding Title}">
+                                <Button.HorizontalContentAlignment>
+                                    <HorizontalAlignment>Center</HorizontalAlignment>
+                                </Button.HorizontalContentAlignment>
+                                <Button.VerticalContentAlignment>
+                                    <VerticalAlignment>Center</VerticalAlignment>
+                                </Button.VerticalContentAlignment>
+                            </Button>
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

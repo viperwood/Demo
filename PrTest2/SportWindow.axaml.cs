@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
@@ -12,6 +13,7 @@ namespace PrTest2;
 
 public partial class SportWindow : Window
 {
+    public static string _nan;
     public SportWindow()
     {
         InitializeComponent();
@@ -19,7 +21,6 @@ public partial class SportWindow : Window
         Sports();
     }
 
-  
     
     
     
@@ -38,22 +39,21 @@ public partial class SportWindow : Window
         {
             x.Id,
             x.Title
-        });
+        }).ToList();
+        _nan = typesofsport.Select(x => x.Title).ToString();
     }
+
 
     
 
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-      
-      
         Sport_NationWindow sportNationWindow = new Sport_NationWindow(
-            (int)(sender as Button).Tag
-            );
+            (int)(sender as Button).Tag,
+            (string)(sender as Button).Content
+            
+        );
         sportNationWindow.Show();
         this.Close();
-
-
-
     }
 }
