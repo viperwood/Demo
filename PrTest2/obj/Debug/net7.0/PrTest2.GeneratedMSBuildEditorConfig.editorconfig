@@ -26,6 +26,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/prdb/RiderProjects/PrTest2/PrTest2/ParticipantsWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/prdb/RiderProjects/PrTest2/PrTest2/SportNatinSportsmenWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/prdb/RiderProjects/PrTest2/PrTest2/SportWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

@@ -14,7 +14,9 @@ namespace PrTest2;
 
 public partial class Sport_NationWindow : Window
 {
-    
+    public int rer;
+    private int broadcastId;
+    private string broadcastName;
     public Sport_NationWindow()
     {
         InitializeComponent();
@@ -23,8 +25,9 @@ public partial class Sport_NationWindow : Window
     public Sport_NationWindow(int qwe, string asd)
     {
         InitializeComponent();
-      
-         wsx.Text = asd.ToString();
+        broadcastId = qwe;
+        broadcastName = asd;
+        wsx.Text = asd.ToString();
 
         rer = qwe;
         SportNation();
@@ -45,7 +48,7 @@ public partial class Sport_NationWindow : Window
         }
     }
 
-    public int rer;
+    
 
 
 
@@ -68,12 +71,24 @@ public partial class Sport_NationWindow : Window
                 n => n.Id,
                 (s, n) => new
                 {
-                    Title = n.Title
+                    Title = n.Title,
+                    Id = n.Id
                 }
 
             );
         SportNationList.Items = sportsmensAndNation;
     }
 
-    
+    private void SportNationality(object? sender, RoutedEventArgs e)
+    {
+        SportNatinSportsmenWindow sportNatinSportsmenWindow = new SportNatinSportsmenWindow
+            (
+                broadcastId, 
+                broadcastName.ToString(),
+                (int)(sender as Button).Tag,
+                (string)(sender as Button).Content
+            );
+        sportNatinSportsmenWindow.Show();
+        this.Close();
+    }
 }

@@ -33,8 +33,7 @@ public partial class SportWindow : Window
 
     private void Sports()
     {
-        List<TypesOfSport> typesofsport;
-        typesofsport = Helper.Database.TypesOfSports.ToList();
+        List<TypesOfSport> typesofsport = Helper.Database.TypesOfSports.ToList();;
         sport.Items = typesofsport.Select(x => new
         {
             x.Id,

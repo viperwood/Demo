@@ -3,11 +3,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="PrTest2.Sport_NationWindow"
-        MinHeight="1000"
-        MinWidth="500"
+        x:Class="PrTest2.SportNatinSportsmenWindow"
         WindowState="Maximized"
-        Title="Sport_NationWindow">
+        Title="SportNatinSportsmenWindow">
     <Grid 
         RowDefinitions="50,*,*"
         ColumnDefinitions="Auto,*,Auto">
@@ -15,7 +13,7 @@
             Grid.Column="1" 
             Grid.Row="0"
             Margin="10"
-            Click="ReturnButton_OnClick">
+            Name="ReturnButton_OnClick">
             <TextBlock
                 Text="Return"/>
         </Button>
@@ -26,26 +24,43 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             FontSize="20"/>
-        <Border 
+        <StackPanel
+            Orientation="Horizontal"
             Grid.Column="1" 
-            Grid.Row="1"
-            CornerRadius="10 10 0 0"
-            VerticalAlignment="Top"
-            Width="200"
-            Height="30"
-            HorizontalAlignment="Left"
-            Background="LightGray"
-            Margin="50 20 0 0">
-            <TextBlock 
-                Margin="7.5"
-                Name="wsx"
-                FontSize="15"
-                TextAlignment="Center"
-                HorizontalAlignment="Center"
-                />
-        </Border>
+            Grid.Row="1">
+            <Border
+                CornerRadius="10 10 0 0"
+                VerticalAlignment="Top"
+                Width="200"
+                Height="30"
+                HorizontalAlignment="Left"
+                Background="LightGray"
+                Margin="50 20 0 0">
+                <TextBlock 
+                    Margin="7.5"
+                    Name="wsx"
+                    FontSize="15"
+                    TextAlignment="Center"
+                    HorizontalAlignment="Center"/>
+            </Border>
+            <Border 
+                CornerRadius="10 10 0 0"
+                VerticalAlignment="Top"
+                Width="200"
+                Height="30"
+                HorizontalAlignment="Left"
+                Background="LightGray"
+                Margin="5 20 0 0">
+                <TextBlock 
+                    Margin="7.5"
+                    FontSize="15"
+                    Name="zxc"
+                    TextAlignment="Center"
+                    HorizontalAlignment="Center"/>
+            </Border>
+        </StackPanel>
         <ListBox 
-            Name="SportNationList"
+            Name="fullSportsmenNation"
             Grid.Column="1" 
             Grid.Row="1" 
             Grid.RowSpan="2"
@@ -60,12 +75,11 @@
                         BorderThickness="2">
                         <StackPanel>
                             <Button
+                                
                                 Height="40"
                                 Width="200"
-                                Tag="{Binding Id}"
-                                Click="SportNationality"
                                 Background="Transparent"
-                                Content="{Binding Title}">
+                                Content="{Binding fullName}">
                                 <Button.HorizontalContentAlignment>
                                     <HorizontalAlignment>Center</HorizontalAlignment>
                                 </Button.HorizontalContentAlignment>
